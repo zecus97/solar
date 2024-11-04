@@ -1,6 +1,6 @@
 let slideIndex = 1;
 showSlides(slideIndex);
-
+let slideInterval = setInterval(() => plusSlides(1), 2000);
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
@@ -24,3 +24,11 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+const sliderContainer = document.querySelector(".slideshow-container"); 
+
+sliderContainer.addEventListener("mouseover", () => {
+  clearInterval(slideInterval);
+});
+sliderContainer.addEventListener("mouseout", () => {
+  slideInterval = setInterval(() => plusSlides(1), 2000);
+});
