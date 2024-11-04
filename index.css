@@ -15,7 +15,7 @@ img {
 .slideshow-container {
   max-width: 1000px;
   position: relative;
-  margin: 5rem auto;
+  margin: 5rem auto 1rem auto;
 }
 
 /* Next & previous buttons */
